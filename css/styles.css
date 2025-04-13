@@ -14,6 +14,8 @@
     --body-bg: #f3f4f6;
     --card-bg: #ffffff;
     --transition-speed: 0.3s;
+    --bg-dark: #292b2f;
+    --txt-dark:white;
 }
 
 * {
@@ -29,6 +31,12 @@ body {
     background-color: var(--body-bg);
     transition: background-color var(--transition-speed) ease;
 }
+
+body.dark-mode {
+    background-color:var(--bg-dark);
+    color: var(--txt-dark);
+}
+
 
 a {
     text-decoration: none;
@@ -71,6 +79,9 @@ nav {
     z-index: 100;
     transition: all 0.3s ease;
 }
+body.dark-mode nav {
+    background-color:#3f4040;
+}
 
 nav.scrolled {
     padding: 1rem 2rem;
@@ -88,6 +99,9 @@ nav.scrolled {
 .logo span {
     color: var(--text-color);
 }
+body.dark-mode .logo span{
+    color: var(--txt-dark);
+}
 
 nav ul {
     display: flex;
@@ -99,6 +113,9 @@ nav ul li a {
     color: var(--text-color);
     font-weight: 500;
     position: relative;
+}
+body.dark-mode nav ul li a{
+    color: var(--txt-dark);
 }
 
 nav ul li a::after {
@@ -133,7 +150,10 @@ nav ul li a:hover::after {
     padding: 2rem;
     overflow: hidden;
     position: relative;
+    background-image: url("img.jpg"); 
+    background-size: cover;
 }
+
 
 .hero-content {
     max-width: 800px;
@@ -147,6 +167,9 @@ nav ul li a:hover::after {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     animation: fadeInDown 1s ease;
+}
+body.dark-mode .hero h1{
+    color: var(--text-color);
 }
 
 .hero p {
@@ -191,6 +214,10 @@ section h2::after {
     background-color: var(--light-color);
 }
 
+body.dark-mode #skills{
+    background-color: var(--bg-dark);
+}
+
 .skill-container {
     display: flex;
     justify-content: center;
@@ -222,8 +249,12 @@ section h2::after {
     color: var(--primary-color);
 }
 
+
 .skill-name {
     font-weight: 500;
+}
+body.dark-mode .skill-name{
+    color: var(--text-color);
 }
 
 .project-container {
@@ -286,6 +317,9 @@ section h2::after {
 
 #contact {
     background-color: var(--light-color);
+}
+body.dark-mode #contact{
+    background-color: var(--bg-dark);
 }
 
 form {
@@ -367,6 +401,30 @@ footer {
 .copyright {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
+}
+
+#darkModeBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+#darkModeBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+body.dark-mode #darkModeBtn {
+    background-color: #f0f0f0;
+    color: #222;
 }
 
 
